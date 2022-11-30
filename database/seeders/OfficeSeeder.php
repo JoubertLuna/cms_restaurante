@@ -21,32 +21,21 @@ class OfficeSeeder extends Seeder
         'descricao'    => 'Cargo Administrador',
       ],
       [
-        'nome'     => 'Recepcionista',
-        'descricao'    => 'Cargo Recepcionista',
-      ],
-      [
-        'nome'     => 'Faxineira',
-        'descricao'    => 'Cargo Faxineira',
-      ],
-      [
-        'nome'     => 'Manobrista',
-        'descricao'    => 'Cargo Manobrista',
-      ],
-      [
-        'nome'     => 'Entregador',
-        'descricao'    => 'Cargo Entregador',
-      ],
-      [
-        'nome'     => 'Garçon',
-        'descricao'    => 'Cargo Garçon',
+        'nome'     => 'Financeiro',
+        'descricao'    => 'Cargo Financeiro',
       ],
       [
         'nome'     => 'Chef',
         'descricao'    => 'Cargo Chef',
       ],
+
       [
-        'nome'     => 'Financeiro',
-        'descricao'    => 'Cargo Financeiro',
+        'nome'     => 'Garçon',
+        'descricao'    => 'Cargo Garçon',
+      ],
+      [
+        'nome'     => 'Tela',
+        'descricao'    => 'Cargo Tela',
       ],
     ]);
   }

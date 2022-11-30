@@ -3,8 +3,10 @@
 use App\Http\Controllers\Painel\{
   BannerController,
   BlogController,
+  CategoryController,
   HomeController,
   OfficeController,
+  ProductController,
   TableController
 };
 use Illuminate\Support\Facades\Route;
@@ -34,5 +36,15 @@ Route::middleware('auth')->group(function () {
   Route::get('blog/excluir/{id}', [BlogController::class, 'excluir'])->name('blog.excluir');
   Route::resource('blog', BlogController::class);
   #Blog
+
+  #Category
+  Route::get('category/excluir/{id}', [CategoryController::class, 'excluir'])->name('category.excluir');
+  Route::resource('category', CategoryController::class);
+  #Category
+
+  #Product
+  Route::get('product/excluir/{id}', [ProductController::class, 'excluir'])->name('product.excluir');
+  Route::resource('product', ProductController::class);
+  #Product
 
 });

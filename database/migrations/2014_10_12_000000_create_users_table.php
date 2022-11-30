@@ -20,6 +20,15 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('image')->nullable();
+            $table->string('fone', 20)->nullable();
+            $table->string('celular', 20)->nullable();
+            $table->string('cep', 20)->nullable();
+            $table->string('logradouro')->nullable();
+            $table->string('numero')->nullable();
+            $table->string('uf', 2)->nullable();
+            $table->string('cidade')->nullable();
+            $table->string('complemento')->nullable();
+            $table->string('bairro')->nullable();
             $table->foreignId('office_id')->constrained()->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();

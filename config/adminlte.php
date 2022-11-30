@@ -297,6 +297,22 @@ return [
       'icon'    => 'fab fa-blogger',
     ],
     [
+      'text'    => 'Produtos / Pratos',
+      'icon'    => 'fas fa-list-alt',
+      'submenu' => [
+        [
+          'text' => 'Categoria',
+          'route'  => 'category.index',
+          'icon'    => 'fas fa-list-alt',
+        ],
+        [
+          'text' => 'Produto',
+          'route'  => 'product.index',
+          'icon'    => 'fas fa-store-alt',
+        ],
+      ],
+    ],
+    [
       'text'    => 'Cadastros',
       'icon'    => 'fas fa-list',
       'submenu' => [
