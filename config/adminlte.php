@@ -311,8 +311,9 @@ return [
                     'icon'    => 'fas fa-receipt',
                 ],
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text' => 'Banners',
+                    'route'  => 'banner.index',
+                    'icon'    => 'fas fa-window-maximize',
                 ],
             ],
         ],
