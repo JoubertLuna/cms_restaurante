@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Models\Painel\Blog;
 use App\Models\Painel\Office;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -49,5 +50,10 @@ class User extends Authenticatable
   public function Office()
   {
     return $this->belongsTo(Office::class);
+  }
+
+  public function posts()
+  {
+    return $this->hasMany(Blog::class);
   }
 }

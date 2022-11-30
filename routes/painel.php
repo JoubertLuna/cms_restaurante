@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\Painel\{
-    BannerController,
-    HomeController,
+  BannerController,
+  BlogController,
+  HomeController,
   OfficeController,
   TableController
 };
@@ -28,5 +29,10 @@ Route::middleware('auth')->group(function () {
   Route::get('banner/excluir/{id}', [BannerController::class, 'excluir'])->name('banner.excluir');
   Route::resource('banner', BannerController::class);
   #Banner
+
+  #Blog
+  Route::get('blog/excluir/{id}', [BlogController::class, 'excluir'])->name('blog.excluir');
+  Route::resource('blog', BlogController::class);
+  #Blog
 
 });
