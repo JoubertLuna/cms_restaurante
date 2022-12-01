@@ -28,28 +28,6 @@ class OfficeController extends Controller
   }
 
   /**
-   * create
-   */
-  public function create()
-  {
-    return view('painel.pages.office.create');
-  }
-
-  /**
-   * store
-   */
-  public function store(OfficeRequest $request)
-  {
-    $data = $request->except('_token');
-
-    if ($this->repository->create($data)) {
-      return redirect()->route('office.index')->with('success', 'Cargo cadastrado com sucesso');
-    } else {
-      return redirect()->route('office.index')->with('error', 'Falha ao cadastrar o cargo');
-    }
-  }
-
-  /**
    * show
    */
   public function show($id)
@@ -91,20 +69,6 @@ class OfficeController extends Controller
       return redirect()->route('office.index')->with('success', 'Cargo editado com sucesso');
     } else {
       return redirect()->route('office.index')->with('error', 'Falha ao editar o cargo');
-    }
-  }
-
-  /**
-   * excluir
-   */
-  public function excluir($id)
-  {
-    $office = Office::find($id);
-    if ($office) {
-      $office->delete();
-      return redirect()->route('office.index')->with('danger', 'Cargo excluído com sucesso!');
-    } else {
-      return redirect()->route('office.index')->with('error', 'Falha ao excluir o cargo');
     }
   }
 }

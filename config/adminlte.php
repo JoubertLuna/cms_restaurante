@@ -259,7 +259,7 @@ return [
   'register_url' => false,
   'password_reset_url' => 'password/reset',
   'password_email_url' => 'password/email',
-  'profile_url' => true,
+  'profile_url' => false,
 
   /*
     |--------------------------------------------------------------------------
@@ -304,6 +304,16 @@ return [
           'text' => 'Fornecedor / Entregador',
           'route'  => 'contact.index',
           'icon'    => 'fas fa-user',
+        ],
+        [
+          'text' => 'Usuário',
+          'route'  => 'user.index',
+          'icon'    => 'fas fa-users',
+        ],
+        [
+          'text' => 'Chef',
+          'route'  => 'chef.index',
+          'icon'    => 'fas fa-chess-king',
         ],
       ],
     ],

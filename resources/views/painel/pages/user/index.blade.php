@@ -2,8 +2,13 @@
 
 @section('title', 'CMS Restaurante')
 
+@section('content_header')
+    <a href="{{ route('user.create') }}" class="btn btn-primary"><i class="fas fa-plus-circle"></i> Cadastrar novo
+        Usuário</a>
+@stop
+
 @section('content')
-<br>
+
     @include('painel.includes.alerts')
 
     <div class="card">
@@ -11,23 +16,34 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>Nome do Cargo</th>
-                        <th>Descricão do Cargo</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Cargo</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($offices as $office)
+                    @foreach ($users as $user)
                         <tr>
-                            <td>{{ $office->nome }}</td>
-                            <td><b><i>{{ $office->descricao }}</i></b></td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>
+                                @foreach ($offices as $office)
+                                    {{ $office->id === $user->office_id ? $office->nome : '' }}
+                                @endforeach
+                            </td>
 
                             <td>
-                                <a href="{{ route('office.show', $office->id) }}" title="Ver Cargo"><i
+                                <a href="{{ route('user.show', $user->id) }}" title="Detalhes do Usuário"><i
                                         class="fas fa-list text-warning"></i></a>
 
-                                <a href="{{ route('office.edit', $office->id) }}" title="Editar Dados"><i
+                                <a href="{{ route('user.edit', $user->id) }}" title="Editar Dados"><i
                                         class="fa fa-edit text-primary"></i></a>
+
+                                <a href="javascript:if(confirm('Deseja realmente excluir')) {
+                                  window.location.href = '{{ route('user.excluir', $user->id) }}' }"
+                                    title="Excluir Dados">
+                                    <i class="fa fa-trash text-danger"></i></a>
                             </td>
                         </tr>
                     @endforeach

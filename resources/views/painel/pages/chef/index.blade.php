@@ -3,7 +3,7 @@
 @section('title', 'CMS Restaurante')
 
 @section('content')
-<br>
+
     @include('painel.includes.alerts')
 
     <div class="card">
@@ -11,25 +11,28 @@
             <table id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th>Nome do Cargo</th>
-                        <th>Descricão do Cargo</th>
+                        <th>Nome</th>
+                        <th>E-mail</th>
+                        <th>Cargo</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($offices as $office)
-                        <tr>
-                            <td>{{ $office->nome }}</td>
-                            <td><b><i>{{ $office->descricao }}</i></b></td>
-
-                            <td>
-                                <a href="{{ route('office.show', $office->id) }}" title="Ver Cargo"><i
-                                        class="fas fa-list text-warning"></i></a>
-
-                                <a href="{{ route('office.edit', $office->id) }}" title="Editar Dados"><i
-                                        class="fa fa-edit text-primary"></i></a>
-                            </td>
-                        </tr>
+                    @foreach ($users as $user)
+                        @if ($user->office_id == '3')
+                            <tr>
+                                <td>{{ $user->name }}</td>
+                                <td>{{ $user->email }}</td>
+                                <td>
+                                    @foreach ($offices as $office)
+                                        {{ $office->id === $user->office_id ? $office->nome : '' }}
+                                    @endforeach
+                                </td>
+                                <td align="center">
+                                    <a class="btn btn-info" href="{{ route('chef.show', $user->id) }}" title="Detalhes do Chef">Detalhes do Chef</a>
+                                </td>
+                            </tr>
+                        @endif
                     @endforeach
                 </tbody>
             </table>

@@ -3,13 +3,13 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-
 use App\Models\Painel\Blog;
 use App\Models\Painel\Office;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
@@ -25,7 +25,16 @@ class User extends Authenticatable
     'email',
     'password',
     'image',
-    'office_id'
+    'office_id',
+    'fone',
+    'celular',
+    'cep',
+    'logradouro',
+    'numero',
+    'uf',
+    'cidade',
+    'complemento',
+    'bairro'
   ];
 
   /**
@@ -56,4 +65,5 @@ class User extends Authenticatable
   {
     return $this->hasMany(Blog::class);
   }
+
 }

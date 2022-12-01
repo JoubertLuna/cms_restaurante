@@ -4,19 +4,22 @@ use App\Http\Controllers\Painel\{
   BannerController,
   BlogController,
   CategoryController,
+  ChefController,
   ContactController,
   HomeController,
   OfficeController,
   ProductController,
-  TableController
+  TableController,
+  UserController
 };
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
 
-  #Home
+  #Home / Chef
   Route::get('/home', [HomeController::class, 'index'])->name('home');
-  #Home
+  Route::resource('chef', ChefController::class);
+  #Home / chef
 
   #Office
   Route::get('office/excluir/{id}', [OfficeController::class, 'excluir'])->name('office.excluir');
@@ -52,5 +55,10 @@ Route::middleware('auth')->group(function () {
   Route::get('contact/excluir/{id}', [ContactController::class, 'excluir'])->name('contact.excluir');
   Route::resource('contact', ContactController::class);
   #Contact
+
+  #User
+  Route::get('user/excluir/{id}', [UserController::class, 'excluir'])->name('user.excluir');
+  Route::resource('user', UserController::class);
+  #User
 
 });
