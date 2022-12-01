@@ -19,7 +19,7 @@
                 </thead>
                 <tbody>
                     @foreach ($users as $user)
-                        @if ($user->office_id == '3')
+                        @if ($user->office_id == '4')
                             <tr>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
@@ -29,7 +29,7 @@
                                     @endforeach
                                 </td>
                                 <td align="center">
-                                    <a class="btn btn-success" href="{{ route('chef.show', $user->id) }}" title="Detalhes do Chef">Detalhes do Chef</a>
+                                    <a class="btn btn-success" href="{{ route('waiter.show', $user->id) }}" title="Detalhes do Garçom">Detalhes do Garçom</a>
                                 </td>
                             </tr>
                         @endif

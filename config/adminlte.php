@@ -315,6 +315,21 @@ return [
           'route'  => 'chef.index',
           'icon'    => 'fas fa-chess-king',
         ],
+        [
+          'text' => 'Garçom',
+          'route'  => 'waiter.index',
+          'icon'    => 'fas fa-chess-bishop',
+        ],
+        [
+          'text' => 'Financeiro',
+          'route'  => 'finance.index',
+          'icon'    => 'fas fa-coins',
+        ],
+        [
+          'text' => 'Administrador',
+          'route'  => 'admin.index',
+          'icon'    => 'fas fa-user-tie',
+        ],
       ],
     ],
     [

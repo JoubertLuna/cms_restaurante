@@ -1,25 +1,31 @@
 <?php
 
 use App\Http\Controllers\Painel\{
+  AdminController,
   BannerController,
   BlogController,
   CategoryController,
   ChefController,
   ContactController,
+  FinanceController,
   HomeController,
   OfficeController,
   ProductController,
   TableController,
-  UserController
+  UserController,
+  WaiterController
 };
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth')->group(function () {
 
-  #Home / Chef
+  #Home / Chef / Waiter / Finance / Admin
   Route::get('/home', [HomeController::class, 'index'])->name('home');
   Route::resource('chef', ChefController::class);
-  #Home / chef
+  Route::resource('waiter', WaiterController::class);
+  Route::resource('finance', FinanceController::class);
+  Route::resource('admin', AdminController::class);
+  #Home / chef / Waiter / Finance / Admin
 
   #Office
   Route::get('office/excluir/{id}', [OfficeController::class, 'excluir'])->name('office.excluir');
