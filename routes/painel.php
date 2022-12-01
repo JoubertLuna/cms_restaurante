@@ -4,6 +4,7 @@ use App\Http\Controllers\Painel\{
   BannerController,
   BlogController,
   CategoryController,
+  ContactController,
   HomeController,
   OfficeController,
   ProductController,
@@ -46,5 +47,10 @@ Route::middleware('auth')->group(function () {
   Route::get('product/excluir/{id}', [ProductController::class, 'excluir'])->name('product.excluir');
   Route::resource('product', ProductController::class);
   #Product
+
+  #Contact
+  Route::get('contact/excluir/{id}', [ContactController::class, 'excluir'])->name('contact.excluir');
+  Route::resource('contact', ContactController::class);
+  #Contact
 
 });

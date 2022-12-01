@@ -297,6 +297,17 @@ return [
       'icon'    => 'fab fa-blogger',
     ],
     [
+      'text'    => 'Pessoas',
+      'icon'    => 'fas fa-users',
+      'submenu' => [
+        [
+          'text' => 'Fornecedor / Entregador',
+          'route'  => 'contact.index',
+          'icon'    => 'fas fa-user',
+        ],
+      ],
+    ],
+    [
       'text'    => 'Produtos / Pratos',
       'icon'    => 'fas fa-list-alt',
       'submenu' => [
